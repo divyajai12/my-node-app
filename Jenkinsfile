@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Clone') {
+            steps {
+                git 'https://github.com/your-username/my-node-app.git'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'echo Building the application...'
