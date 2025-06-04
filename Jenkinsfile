@@ -2,24 +2,27 @@ pipeline {
     agent any
 
     stages {
-        stage('Clone') {
+        stage('Checkout') {
             steps {
-                git 'https://github.com/divyajai12/my-node-app.git'
+                git branch: 'main', url: 'https://github.com/yourusername/yourrepo.git'
             }
         }
         stage('Build') {
             steps {
-                sh 'echo Building the application...'
+                sh 'echo "Building the application..."'
+                // Add your build commands here
             }
         }
         stage('Test') {
             steps {
-                sh 'echo Running tests...'
+                sh 'echo "Running tests..."'
+                // Add test commands here
             }
         }
         stage('Deploy') {
             steps {
-                sh 'echo Deploying application...'
+                sh 'echo "Deploying application..."'
+                // Add deployment commands here
             }
         }
     }
